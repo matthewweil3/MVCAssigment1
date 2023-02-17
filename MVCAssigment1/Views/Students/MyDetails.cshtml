@@ -1,0 +1,31 @@
+﻿@model MVCAssigment1.Models.Student
+@{
+    ViewData["Title"] = "MyDetails";
+}
+
+<p>
+First Name: @Html.DisplayFor(model => model.fname)
+</p>
+
+<p>
+ Last Name: @Html.DisplayFor(model => model.lname)
+</p>
+
+<p>@Html.DisplayFor(model => model.fname) is a @Html.DisplayFor(model => model.Glevel) here at TMU.</p>
+
+<p>@Html.DisplayFor(model => model.fname) also has a @Html.DisplayFor(model => model.GPA) GPA!</p>
+@{
+    var gpa = Model.GPA;
+    if (gpa >= 3) 
+    {
+        <p>@Html.DisplayFor(model => model.fname) is a fantastic student based of their GPA!</p>
+    }
+    else
+    {
+        <p>@Html.DisplayFor(model => model.fname) may need some help in their studies based of their GPA</p>
+    }
+}
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

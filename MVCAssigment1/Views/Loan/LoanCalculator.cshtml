@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "LoanCalculator";
+}
+
+<p>Figure out total payment</p>
+<form action ="\Loan\LoanCalculator" method="post">
+    <label>Loan</label>
+    <input type="text" name="a" id="a" />
+    <label>Interest</label>
+    <input type="text" name="b" id="b" />
+    <label>Time in Years</label>
+    <input type="text" name="c" id="c" />
+    <input type="submit" value="Find Out!" />
+</form>
+<br /><br />
+<p> Amount paid after @ViewData["Years"] years = @ViewData["totalpay"]</p>
+
